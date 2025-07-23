@@ -1,12 +1,11 @@
-const http = require('http');
+var http = require('http');
 
-const ports = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
-ports.forEach(port => {
-  http.createServer((req, res) => {
-    res.write(`I'm alive on port ${port}`);
-    res.end();
-  }).listen(port, () => {
-    console.log(`Keep-alive server running on port ${port}`);
-  });
+http.createServer(function (req, res) {
+  res.write("I'm alive");
+  res.end();
+}).listen(8080);
+}).listen(PORT, () => {
+  console.log(`Keep-alive server running on port ${PORT}`);
 });
